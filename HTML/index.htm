@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ONE - Personal Resume</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="css/prettyPhoto.css"
+      type="text/css"
+      media="screen"
+      charset="utf-8"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Bree+Serif"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=3.3"
+    ></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="logo">
+        <a href="#"><img src="images/logo.png" /></a>
+      </div>
+      <ul id="main-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+      </ul>
+    </div>
+
+    <div id="container">
+      <!--Begin About Section-->
+      <div id="about">
+        <h1>About</h1>
+        <ul id="top-social">
+          <li><a href="#" class="facebook">Facebook</a></li>
+          <li><a href="#" class="twitter">Twitter</a></li>
+          <li><a href="#" class="linkedin">LinkedIn</a></li>
+        </ul>
+        <div class="top-divider"></div>
+        <div class="content">
+          <img src="images/myprofile.jpg" style="height: 270px; width: 200px" />
+          <h2>Greeting</h2>
+          <p>
+            I'm Tribodee, a student delving into the world of DevOps. I'm
+            passionate about bridging development and operations to improve
+            software delivery. Education: I'm an enthusiastic student keen on
+            mastering DevOps principles to enhance software development
+            efficiency. Skills and Interests: I'm interested in areas like
+            continuous integration, continuous deployment, automation,
+            containerization, and infrastructure as code. I'm eager to apply
+            these skills. Learning Journey: I'm currently building a solid
+            foundation in DevOps by studying key concepts and tools like Docker,
+            Jenkins, and Git. Courses and Resources: Actively seeking online
+            DevOps courses and resources to acquire necessary knowledge and
+            skills. Community Engagement: Engaging with the DevOps community
+            through forums, discussions, and open-source projects to learn from
+            professionals and stay updated. Practical Experience: Aiming to gain
+            hands-on experience through internships or volunteering in
+            DevOps-related projects. Personal Projects: Working on personal
+            DevOps projects to showcase skills and passion. Excited to continue
+            my DevOps journey. If you have advice or experiences to share, I'm
+            all ears.
+          </p>
+        </div>
+        <!-- <div class="bottom-divider"></div> -->
+      </div>
+      <!--End About Section-->
+
+      <!--Begin Experience Section-->
+      <div id="experience">
+        <h1>Experience</h1>
+        <div class="top-divider"></div>
+        <div class="content">
+          <div class="col">
+            <h2>Configuration Management for Compliance Enforcement</h2>
+            <p>
+              I choose Puppet to managea client-server architecture. It uses a
+              declarative language to define configurations in manifest files,
+              which contain resources representing system components and
+              settings. The Puppet server compiles a catalog of desired state
+              for each client. The Puppet agent on the client system
+              periodically compares its current state to the catalog and
+              enforces changes to align with the desired state. Puppet
+              emphasizes idempotence, ensuring consistent results even with
+              multiple runs. It offers reporting, logging, and modular
+              organization of configurations for reusability.
+            </p>
+          </div>
+
+          <div class="col col-mid">
+            <h2>Project: Puppet-Managed Web Server Deployment</h2>
+            <p>
+              In this project, I'll use Puppet to automate the deployment
+              and management of a web server. You'll set up a virtual machine
+              (VM) or a cloud instance and configure it as a web server using
+              Puppet manifests.
+            </p>
+          </div>
+        </div>
+        <div class="bottom-divider"></div>
+      </div>
+    </div>
+
+    <!-- The JavaScript -->
+    <script type="text/javascript">
+      $(function () {
+        $("#main-menu li a").bind("click", function (event) {
+          var $anchor = $(this);
+
+          $("html, body")
+            .stop()
+            .animate(
+              {
+                scrollTop: $($anchor.attr("href")).offset().top,
+              },
+              1500,
+              "easeInOutExpo"
+            );
+
+          event.preventDefault();
+        });
+      });
+
+      $(document).ready(function () {
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+          social_tools: false,
+          deeplinking: false,
+        });
+      });
+    </script>
+  </body>
+</html>
